@@ -1,7 +1,8 @@
 <template>
     <v-layout>
       <v-app-bar 
-      style="position: fixed; background: #FFF; box-shadow: none;"
+      style="position: fixed; background: #FFF;"
+      class="shadow-sm p-3 mb-5 bg-body rounded"
       fixed
       elevate-on-scroll
       scroll-target="#scrolling-techniques-7"
@@ -19,7 +20,7 @@
                 >
                 {{ item.title }}
             </a>
-        <button type="button" class="btn text-white mx-3" style="background-color: #134B70;"><v-icon class="me-2" icon="mdi-whatsapp"></v-icon>Contact Us</button>
+        <button type="button" class="btn text-white mx-3" style="background-color: #967259;"><v-icon class="me-2" icon="mdi-whatsapp"></v-icon>Contact Us</button>
         </div>
 
         <v-btn icon @click="toggleDrawer" class="hidden-md-and-up">
@@ -53,8 +54,8 @@ export default {
       drawer: false,
       menuItems: [
         { title: 'Home', link: '/' },
-        { title: 'Our Projects', link: '/projects' },
-        { title: 'Our Team', link: '/teams' },
+        { title: 'Menu', link: '/projects' },
+        { title: 'Book Now', link: '/teams' },
       ],
       isScrolled: false,
     };

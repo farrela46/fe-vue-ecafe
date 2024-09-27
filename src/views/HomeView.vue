@@ -23,29 +23,12 @@ export default {
             src: '../src/assets/background.svg',
           },
         ],
-        services: [
-          {
-            id: 1,
-            title: 'Unified Modelling Language',
-            desc: 'Kami menyediakan layanan pembuatan diagram UML, seperti Use Case, Activity Diagram, Sequence Diagram, dan lainnya dengan harga terjangkau'
-          },  
-          {
-            id: 2,
-            title: 'Pembuatan Website',
-            desc: 'Kami menyediakan layanan pembuatan website untuk bisnis anda, sistem manajemen, website pembelian dan lainnya dengan harga terjangkau'
-          },
-          {
-            id: 3,
-            title: '3D Modelling',
-            desc: 'Kami menyediakan layanan pembuatan website untuk pembelian'
-          },          
-        ],
-        projects: [
+        coffees: [
         {
             id: 1,
-            img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
-            title: 'Unified Modelling Language',
-            desc: 'Kami menyediakan layanan pembuatan diagram UML, seperti Use Case, Activity Diagram, Sequence Diagram, dan lainnya dengan harga terjangkau',
+            img: 'https://www.seriouseats.com/thmb/x5dQAByuE9saNvybQ4sjTU1dHG8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20230621-SEA-DalognaCoffee-LorenaMasso-hero-e6a0eb179a2d457fb40c059d91594c35.jpg',
+            title: 'Dalgona Coffee',
+            rating: '4',
             category: [
               { 
                 id: 1,
@@ -59,9 +42,9 @@ export default {
           },  
         {
             id: 2,
-            img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
-            title: 'Pembuatan Website',
-            desc: 'Kami menyediakan layanan pembuatan website untuk bisnis anda, sistem manajemen, website pembelian dan lainnya dengan harga terjangkau',
+            img: 'https://i.insider.com/610c373d2a24d0001861ede4?width=1136&format=jpeg',
+            title: 'Nigga Coffee',
+            rating: '4.5',
             category: [
               { 
                 id: 1,
@@ -75,9 +58,25 @@ export default {
           },
           {
             id: 3,
-            img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
-            title: '3D Modelling',
-            desc: 'Kami menyediakan layanan pembuatan website untuk pembelian',
+            img: 'https://cdn.loveandlemons.com/wp-content/uploads/2023/06/iced-matcha-latte.jpg',
+            title: 'Matcha Latte',
+            rating: '4.5',
+            category: [
+              { 
+                id: 1,
+                name: "3D Model"
+              },
+              { 
+                id: 2,
+                name: "Animation"
+              }
+            ]
+          },
+          {
+            id: 4,
+            img: 'https://www.healthyfood.com/wp-content/uploads/2016/11/Dark-hot-chocolate-1.jpg',
+            title: 'Nigga Chocolate',
+            rating: '3.5',
             category: [
               { 
                 id: 1,
@@ -108,44 +107,62 @@ export default {
 <template>
   <ToolbarComp>
     <v-container fluid>
-      <v-row>
-        <v-col class="carousel-block"
-        >
-          <v-carousel
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-center"
-            :show-arrows="false"
-            hide-delimiter-background
-            class="carousel-block"
-          >
-            <v-carousel-item
-              v-for="(item, i) in items"
-              :key="i"
-              :src="item.src"
-              cover
-            >
-              <v-sheet
-                class="transparent-sheet"
-              >
-                <div class="d-flex fill-height align-center">
-                  <div class="text-content text-white">
-                    <h3>Solusi Digital untuk company anda!</h3>
-                    <p> Lorem ipsum dolor sit amet consectetur. </p>
-                  </div>
-                </div>
-              </v-sheet>
-            </v-carousel-item>
-          </v-carousel>
-        </v-col>
-      </v-row>
       <v-row class="mt-5 about-us">
         <v-col>
+          <v-img
+            cover
+            height="800"
+            src="https://www.bhg.com/thmb/Dw9Sxcivh_bczUpo91Egapy-lGc=/7952x0/filters:no_upscale():strip_icc()/feshly-brewed--latte-coffee-on-a-white-table-1434303312-4d24a51e3bc748d68553a836499d0100.jpg"
+            class="fade-img"
+          >
+          <div class="fade-overlay"></div>
+        </v-img>
+        </v-col>
+        <v-col class="align-self-center">
           <v-row class="title-row" >
-            <a style="font-size: 36px; font-weight: 600"> Tentang Kami </a>
+            <a style="font-weight: 800;"> Tentang Kami </a>
           </v-row>
           <v-row class="content-row">
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, aliquid molestiae distinctio sapiente ullam repudiandae eum praesentium ab, sit ratione iste, autem tempora blanditiis. Ducimus, explicabo, fugiat minima incidunt id dolore accusantium eligendi eveniet suscipit, quo laudantium similique labore illo exercitationem. Dolor facilis et fugiat? Fugiat eos exercitationem sed aspernatur, dolore atque facere ex veritatis, debitis, sint nemo nostrum. Ad officiis incidunt molestias ex alias sed provident vero veritatis eius consequatur eos iste aspernatur, quam necessitatibus sit in voluptate explicabo totam omnis numquam vel corrupti, amet fuga? Illo, necessitatibus sit aperiam voluptatibus minima id eveniet iusto? Veniam nisi necessitatibus libero?
+              Café X adalah kafe modern yang menawarkan kopi spesial berbahan biji kopi premium serta aneka minuman non-kopi. Menyediakan makanan ringan, dessert, dan sarapan favorit seperti croissant dan pancake. Dengan suasana nyaman dan pelayanan ramah, Café X cocok untuk bersantai atau bekerja di tengah kota.
+            </p>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-container fluid>
+      <v-row class="mt-5 about-us">
+        <v-col class="align-self-center our-facility">
+          <v-row class="subtitle-row" >
+            <a style="font-weight: 800;"> &mdash; Tentang Kami </a>
+          </v-row>
+          <v-row class="title-row" >
+            <a style="font-weight: 800;"> Our Innovations </a>
+          </v-row>
+        </v-col>
+        <v-col class="align-self-center">
+          <v-row class="content-row">
+            <p>
+              Di Café X, kami selalu berusaha untuk menghadirkan inovasi dalam setiap cangkir kopi. Kami menggunakan metode penyeduhan terbaru dan bahan-bahan berkualitas tinggi untuk menciptakan rasa yang unik. Setiap bulan, kami memperkenalkan menu baru yang mengeksplorasi kombinasi rasa yang menarik, memberikan pengalaman berbeda bagi pengunjung.
+            </p>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-container fluid>
+      <v-row class="mt-5 about-us">
+        <v-col class="align-self-center our-facility">
+          <v-row class="subtitle-row" >
+            <a style="font-weight: 800;"> &mdash; Tentang Kami </a>
+          </v-row>
+          <v-row class="title-row" >
+            <a style="font-weight: 800;"> Our Specialty </a>
+          </v-row>
+        </v-col>
+        <v-col class="align-self-center">
+          <v-row class="content-row">
+            <p>
+              Kopi spesial adalah fokus utama kami di Café X. Kami menyajikan berbagai pilihan kopi, mulai dari espresso yang kaya hingga latte art yang cantik. Setiap biji kopi dipilih secara cermat dan diseduh dengan teknik terbaik. Kami juga menawarkan variasi minuman non-kopi yang menggugah selera, cocok untuk semua pengunjung.
             </p>
           </v-row>
         </v-col>
@@ -153,79 +170,82 @@ export default {
     </v-container>
     <v-container fluid style="background-color: #EEEEEE">
         <v-row class="service" 
-        data-aos="fade-up" 
-        data-aos-anchor-placement="center-center"
         >
-          <v-col>
+          <v-col cols="12">
+            <v-card
+              class="mx-auto p-5"
+              style="border-radius: 24px;"
+            >
             <v-row>
-              <v-col>
-                <div class="text-center">
-                  <a style="font-size: 36px; font-weight: 600"> Service </a>
-                </div>
+              <v-col align-self="center" >
+                <v-row justify="center">
+                  <v-avatar
+                  size="450"
+                  >
+                    <v-img
+                      alt="Ava"
+                      src="https://wallpapercave.com/wp/wp7926787.jpg"
+                    ></v-img>
+                  </v-avatar>
+                </v-row>
+                <v-row justify="center">
+                  <a class="title-profile"> Mr. Riz Xtar</a>
+                </v-row>
+              </v-col>
+              <v-col class="align-self-center">
+                <v-row class="text-owner">
+                  <p>
+                    "Terima kasih sudah datang ke kafe saya dan membuat saya makin kaya. Kalian beli kopi, saya dapat untung! Semoga uang kalian cukup untuk balik lagi besok. Jangan lupa ajak teman, biar saya makin sukses."
+                  </p>
+                </v-row>
               </v-col>
             </v-row>
-            <v-row class="pt-7" data-aos="fade-up" data-aos-anchor-placement="center-center">
-              <v-col cols="12" sm="4"   v-for="(item, index) in services"
-              :key="index">
-              <v-card class="mx-auto" max-width="378" height="350" style="display: flex; flex-direction: column;">
-                <v-card-text style="flex-grow: 1;">
-                  <v-col>
-                    <v-row>
-                      <a class="text-h5 text-dark font-weight-black p-2">{{ item.title }}</a>
-                    </v-row>
-                    <v-row>
-                      <div class="service-paragraph p-2">
-                        <p>{{ item.desc }}</p>
-                      </div>
-                    </v-row>
-                  </v-col>
-                </v-card-text>
-                <v-card-actions class="p-2" style="margin-top: auto;">
-                  <v-col>
-                    <button type="button" class="btn text-white p-2 mb-2 w-100" style="background-color: #201E43;">Selengkapnya</button>
-                  </v-col>
-                </v-card-actions>
-              </v-card>
-              </v-col>
-            </v-row>
+            </v-card>
           </v-col>
         </v-row>
       </v-container>
       <v-container fluid >
-        <v-row class="projects" data-aos="fade-up" data-aos-anchor-placement="center-center">
+        <v-row class="projects">
           <v-col>
-            <v-row data-aos="fade-up" data-aos-anchor-placement="center-center">
+            <v-row>
               <v-col>
-                <a class="project-header"> Project Terbaru </a>
+                <a class="project-header"> Newcomer </a>
               </v-col>
               <v-col class="text-end align-end me-5">
-                <a @click="PushToOurProjects" style="font-size: 15px; font-weight: 200; cursor: pointer"> Lihat Semua <v-icon icon="mdi-arrow-right-thin" size="small"></v-icon> </a>
+                <a @click="PushToOurProjects" style="font-size: 15px; font-weight: 200; cursor: pointer"> See More <v-icon icon="mdi-arrow-right-thin" size="small"></v-icon> </a>
               </v-col>
             </v-row>
-            <v-row class="pt-7" data-aos="fade-up" data-aos-anchor-placement="center-center">
-              <v-col cols="12" sm="4" v-for="(item, index) in projects"
+            <v-row class="pt-7">
+              <v-col cols="12" sm="3" v-for="(item, index) in coffees"
               :key="index">
                 <v-card
                   class="mx-auto"
                   max-width="378"
                   height="489"
-                  style="display: flex; flex-direction: column;"
+                  style="display: flex; flex-direction: column; border-radius: 12px;"
                 >
                   <v-img
                     class="align-end text-white"
-                    height="200"
                     :src="item.img"
+                    aspect-ratio="1/1"
+                    max-height="300"
                     cover
                   >
-                </v-img>
-                <v-card-title>
-                  <a class="text-h7 text-dark font-weight-black p-2"> {{ item.title }}</a>
-                </v-card-title>
+                  </v-img>
+                  <v-card-title class="px-2">
+                    <v-rating
+                      hover
+                      :length="5"
+                      :size="32"
+                      :model-value="item.rating"
+                      active-color="primary"
+                      half-increments
+                    />
+                  </v-card-title>
                   <v-card-text class="p-2">
-                    <p >{{ item.desc }}</p>
+                    <a class="text-h5 text-dark font-weight-black p-2"> {{ item.title }}</a>
                   </v-card-text>
-                  
-                  <v-card-actions style="margin-top: auto;">
+                  <v-card-actions style="margin-top: auto; margin-left: 10px">
                     <v-chip-group
                       column
                       color="indigo"
@@ -258,25 +278,25 @@ export default {
   list-style: none;
 }
 
-.carousel-item {
+.fade-img {
   position: relative;
 }
 
-.carousel-block {
+.fade-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  max-height: 500px;
-  margin-left: 10px;
-  margin-right: 30px;
-  margin-top: 10px;
-  border-radius: 24px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 95%, rgba(255, 255, 255, 1) 100%);
 }
 
-.transparent-sheet {
-  background-color: transparent !important;
-  box-shadow: none;
-  margin-left: 70px;
-  height: 90%;
+.title-row {
+  font-size: 72px;
+}
+
+.subtitle-row {
+  font-size: 24px;
 }
 
 .text-content h3 {
@@ -284,24 +304,50 @@ export default {
   margin: 0;
 }
 
+
+
 .text-content p {
   font-size: 1rem; 
   margin: 0;
 }
 
 .about-us {
-  padding-left: 130px;
-  padding-right: 130px;
   padding-top: 60px;
   margin-bottom: 80px;
 }
 
+.our-facility {
+  padding-left: 80px;
+}
+
+.content-row {
+  padding-top: 0 !important;
+  padding-right: 80px;
+  font-size: 24px;
+}
+
+.content-owner {
+  padding-right: 80px;
+  font-size: 24px;
+}
 
 .service {
   padding-left: 130px;
   padding-right: 130px;
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.title-profile {
+font-size: 32px;
+color: #080808;
+  
+}
+
+.text-owner {
+font-size: 32px;
+color: #080808;
+  
 }
 
 .service-paragraph{
