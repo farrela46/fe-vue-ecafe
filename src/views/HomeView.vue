@@ -24,11 +24,12 @@ export default {
           },
         ],
         coffees: [
-        {
+          {
             id: 1,
             img: 'https://www.seriouseats.com/thmb/x5dQAByuE9saNvybQ4sjTU1dHG8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20230621-SEA-DalognaCoffee-LorenaMasso-hero-e6a0eb179a2d457fb40c059d91594c35.jpg',
             title: 'Dalgona Coffee',
             rating: '4',
+            desc: 'Dalgona Coffee is a beverage originating from Macau made by whipping equal parts instant coffee powder, sugar, and hot water until it becomes creamy and then adding it to cold or hot milk.',
             category: [
               { 
                 id: 1,
@@ -40,11 +41,12 @@ export default {
               }
             ]
           },  
-        {
+          {
             id: 2,
             img: 'https://i.insider.com/610c373d2a24d0001861ede4?width=1136&format=jpeg',
             title: 'Nigga Coffee',
             rating: '4.5',
+            desc: 'Nigga Coffee offering bold, high-quality brews with a lighthearted twist. Perfect for those who enjoy their coffee with a side of laughter!',
             category: [
               { 
                 id: 1,
@@ -61,6 +63,7 @@ export default {
             img: 'https://cdn.loveandlemons.com/wp-content/uploads/2023/06/iced-matcha-latte.jpg',
             title: 'Matcha Latte',
             rating: '4.5',
+            desc: 'MatchaLatte is a fun parody of classic matcha drinks, blending earthy flavors with humor. Enjoy a delicious, high-quality latte experience with a playful twist for matcha lovers!',
             category: [
               { 
                 id: 1,
@@ -77,6 +80,7 @@ export default {
             img: 'https://www.healthyfood.com/wp-content/uploads/2016/11/Dark-hot-chocolate-1.jpg',
             title: 'Nigga Chocolate',
             rating: '3.5',
+            desc: 'Nigga Chocolate is a playful take on dark chocolate, blending rich, bold flavors with a touch of humor. Perfect for those who enjoy deep, intense chocolate with a fun, lighthearted twist!',
             category: [
               { 
                 id: 1,
@@ -88,13 +92,12 @@ export default {
               }
             ]
           },
-          
         ]
       }
   },
   methods: {
-    PushToOurProjects() {
-      this.$router.push('/projects')
+    PushToOurMenus() {
+      this.$router.push('/menu')
     }
   },
   mounted() {
@@ -212,16 +215,16 @@ export default {
                 <a class="project-header"> Newcomer </a>
               </v-col>
               <v-col class="text-end align-end me-5">
-                <a @click="PushToOurProjects" style="font-size: 15px; font-weight: 200; cursor: pointer"> See More <v-icon icon="mdi-arrow-right-thin" size="small"></v-icon> </a>
+                <a @click="PushToOurMenus" style="font-size: 15px; font-weight: 200; cursor: pointer"> See More <v-icon icon="mdi-arrow-right-thin" size="small"></v-icon> </a>
               </v-col>
             </v-row>
             <v-row class="pt-7">
               <v-col cols="12" sm="3" v-for="(item, index) in coffees"
               :key="index">
                 <v-card
-                  class="mx-auto"
+                  class="mx-auto mb-2"
                   max-width="378"
-                  height="489"
+                  min-height="500"
                   style="display: flex; flex-direction: column; border-radius: 12px;"
                 >
                   <v-img
@@ -240,25 +243,17 @@ export default {
                       :model-value="item.rating"
                       active-color="primary"
                       half-increments
+                      readonly
                     />
+
+                    <p style="font-weight: 700; color: #967259;">Rp. 20.000</p>
                   </v-card-title>
-                  <v-card-text class="p-2">
+                  <v-card-text>
                     <a class="text-h5 text-dark font-weight-black p-2"> {{ item.title }}</a>
                   </v-card-text>
-                  <v-card-actions style="margin-top: auto; margin-left: 10px">
-                    <v-chip-group
-                      column
-                      color="indigo"
-                      mandatory
-                      v-for="item in item.category" :key="item.id"
-                    >
-                      <v-chip 
-                      class="white--text"
-                      >
-                      {{ item.name }}
-                    </v-chip>
-                    </v-chip-group>
-                  </v-card-actions>
+                  <v-card-text class="px-2 mb-2">
+                    <p >{{ item.desc }}</p>
+                  </v-card-text>
                 </v-card>
               </v-col>
             </v-row>

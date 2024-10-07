@@ -54,7 +54,7 @@ export default {
       drawer: false,
       menuItems: [
         { title: 'Home', link: '/' },
-        { title: 'Menu', link: '/projects' },
+        { title: 'Menu', link: '/menu' },
         { title: 'Book Now', link: '/teams' },
       ],
       isScrolled: false,
